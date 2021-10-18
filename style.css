@@ -29,7 +29,7 @@
 .navigation ul li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .navigation ul li a {
@@ -63,4 +63,20 @@
     font-family: "JetBrains Mono ExtraBold", Serif;
     border: 3px;
     border-style: double;
+}
+
+.forumContainer_Socials {
+    border: 3px;
+    border-style: double;
+}
+
+.login {
+    background-color: white;
+    width: 50%;
+    border: 3px;
+    border-style: double;
+    margin: auto;
+    height:fit-content;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
