@@ -37,3 +37,30 @@
     color: aliceblue;
     text-transform: uppercase;
 }
+
+.indexBody {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    text-indent: 3px;
+    min-height: 1080px;
+    padding-top: 25px;
+}
+
+.forumContainer {
+    background-color: white;
+    width: 85%;
+    border: 3px;
+    border-style: double;
+    margin: auto;
+    height:fit-content;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.forumContainer_Title {
+    font-size: larger;
+    font-family: "JetBrains Mono ExtraBold", Serif;
+    border: 3px;
+    border-style: double;
+}
