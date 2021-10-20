@@ -50,33 +50,28 @@
 .forumContainer {
     background-color: white;
     width: 85%;
-    border: 3px;
-    border-style: double;
-    margin: auto;
+    border: 3px double;
     height:fit-content;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin: auto auto 1rem;
 }
 
 .forumContainer_Title {
     font-size: larger;
     font-family: "JetBrains Mono ExtraBold", Serif;
-    border: 3px;
-    border-style: double;
+    border: 3px double;
 }
 
 .forumContainer_Socials {
-    border: 3px;
-    border-style: double;
+    border: 3px double;
 }
 
 .login {
     background-color: white;
     width: 50%;
-    border: 3px;
-    border-style: double;
-    margin: auto;
+    border: 3px double;
     height:fit-content;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin: auto auto 1rem;
 }
+
