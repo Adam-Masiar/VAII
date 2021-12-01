@@ -17,6 +17,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
 <div class="indexBody">
     <div class="login">
         <li><a href="logout.php">Logout</a></li>
+        <li><a href="deleteacc.php">Delete Account</a></li>
         <br>
         Change Password:
         <form name="passresetform" method="post" action="account.php">
