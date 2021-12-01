@@ -7,16 +7,7 @@
 
 </head>
 <body>
-    <div class="banner">
-        <div class="navigation">
-            <img src="images/logo.png" alt="Logo" class="logo">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-        </div>
-    </div>
+    <?php include "navigation.php" ?>
     <div class="indexBody">
         <div class="forumContainer">
             <div class="forumContainer_Title">

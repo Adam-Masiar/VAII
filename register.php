@@ -7,16 +7,7 @@
 
 </head>
 <body>
-<div class="banner">
-    <div class="navigation">
-        <img src="images/logo.png" alt="Logo" class="logo">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-    </div>
-</div>
+<?php include "navigation.php" ?>
 
 <div class="indexBody">
     <div class="login">
@@ -38,7 +29,6 @@
 
             if (empty(trim($username)) || empty(trim($password)) || empty(trim($passwordrepeat))) {
                 echo "Treba vyplnit vsetky polozky";
-                return;
             }
             if(!preg_match('/^[a-zA-Z0-9_]+$/', trim($username))) {
                 $username_error = "Nickname has to inlcude only Numbers and Letters";
@@ -52,6 +42,9 @@
                 $passwordrepeat_error = "Passwords must match";
             }
             $conn = new mysqli("dockerDB","root","password","myDB");
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
             $namecheck = $conn->query("SELECT * FROM users WHERE nickname = '$username'");
 
             if(mysqli_num_rows($namecheck) > 0) {

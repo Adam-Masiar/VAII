@@ -7,16 +7,7 @@
 
 </head>
 <body>
-<div class="banner">
-    <div class="navigation">
-        <img src="images/logo.png" alt="Logo" class="logo">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-    </div>
-</div>
+<?php include "navigation.php" ?>
 
 <div class="indexBody">
     <div class="login">
@@ -49,6 +40,10 @@
                 $hash = $conn->query("SELECT password FROM users WHERE nickname = '$username'")->fetch_object()->password;
                 if(password_verify($password,$hash)) {
                     echo "Successful";
+                    $_SESSION['username'] = $username;
+                    $_SESSION['password'] = $hash;
+                    header("Location: index.php");
+
                 } else {
                     $password_error = "Incorrect Password";
                 }
