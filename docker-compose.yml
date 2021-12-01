@@ -2,6 +2,7 @@ version: '2'
 services:
   webserver-DB:
     image: mysql
+    container_name: dockerDB
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=myDB

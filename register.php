@@ -51,19 +51,18 @@
             if($password != $passwordrepeat) {
                 $passwordrepeat_error = "Passwords must match";
             }
-            //$namecheck = "SELECT nickname FROM users WHERE nickname = $username";
-            //if(mysqli_num_rows($namecheck) > 0) {
-            //    $username_error = "Nickname already exists, try another one";
-            //}
+            $conn = new mysqli("dockerDB","root","password","myDB");
+            $namecheck = $conn->query("SELECT * FROM users WHERE nickname = '$username'");
 
+            if(mysqli_num_rows($namecheck) > 0) {
+                $username_error = "Nickname already exists, try another one";
+            }
             if(empty($username_error) && empty($password_error) && empty($passwordrepeat_error)) {
                 $db_username = $username;
                 $db_password = password_hash($password, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO users (nickname,password) VALUES ($db_username,$db_password)";
+                $sql = "INSERT INTO users (nickname,password) VALUES ('$db_username','$db_password')";
 
-                $conn = new mysqli(localhost,root,password,myDB);
                 if ($conn->connect_error) {
-                    echo "Connection Failed";
                     die("Connection failed: " . $conn->connect_error);
                 }
                 if ($conn->query($sql) == TRUE) {
@@ -71,13 +70,16 @@
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }
-
             } else {
-                echo "Username error : $username_error \n Password error : $password_error";
+                if($username_error != "") {
+                    echo "$username_error \n";
+                } else if($password_error != "") {
+                    echo "$password_error \n";
+                } else if($passwordrepeat_error != ""){
+                    echo "$password_error \n";
+                }
             }
-
         }
-
         ?>
     </div>
 </div>
